@@ -1,4 +1,4 @@
-package com.example.zipshow;
+package com.example.extract;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -30,8 +30,7 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.example.zipshow.R;
-
+import com.example.extract.R;
 public class ZipShow extends Activity {
 
 	final String sep = File.separator;
@@ -173,7 +172,7 @@ public class ZipShow extends Activity {
 		private int unzip(String path) {
 			int result = -1;
 			if (!isDirectory(path)) { // just a file; path is file name.
-				result = unzipOneFile(mParent + path);
+				result = unzipOneFile(path);
 			} else { // path is a Dirctory
 //				logd("unzip Dir:" + path);
 				ArrayList<String> childs = getDirs(path);
